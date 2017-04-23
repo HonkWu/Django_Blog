@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {% load staticfiles %}
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="lurancehsl@gmail.com">
+    <title>Lurance Space</title>
+    <meta name="description" content="诗亮的个人博客">
+    <meta name="keywords" content="Web Security，Django，Web Development">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <link rel="short icon" href="{% static 'blog/img/avatar.jpg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/blog_basic.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/friendly.css' %}">
+
+</head>
+
+<body>
+    <div class="sidebar animated fadeInDown">
+        <div class="logo-title">
+            <div class="title">
+                <img src="{% static 'blog/img/avatar.jpg' %}" width="20%">
+                <h3><a href="../../../../">诗亮</a></h3>
+                <div class="description">
+                    <p>Nothing lasts forever.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer"><a href="#" target="_blank"><span>© 2016 - 2017 He Shiliang</span></a>
+            <div class="by_farbox"><a href="https://www.djangoproject.com/" target="_blank" title="Powered By Django">Django</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="page-top animated fadeInDown">
+            <div class="nav">
+                {% block current%}
+                <li><a href="../../../../../" class="current">首页</a></li>
+                <li><a href="../../../../../category">分类</a></li>
+                <li><a href="../../../../archives">归档</a></li>
+                    <li><a href="#">关于</a></li>
+                {% endblock %}
+            </div>
+            <div class="information">
+                <div class="avatar"><img src="{% static 'blog/img/avatar.jpg' %}"></div>
+            </div>
+        </div>
+        <div class="autopagerize_page_element">
+        {% block main %}
+        {% endblock main %}
+    </div>
+    <script src="{% static 'blog/js/jquery.js' %}"></script>
+    <script src="{% static 'blog/js/jquery-migrate-1.js' %}"></script>
+    <script src="{% static 'blog/js/jquery_002.js' %}"></script>
+    <script src="{% static 'blog/js/wisplayer.js' %}" data-no-instant=""></script>
+    <script>
+        wisplayer()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block current%}
+    <li><a href="../../../../../">首页</a></li>
+    <li><a href="../../../../../category" class="current">分类</a></li>
+    <li><a href="../../../archives">归档</a></li>
+    <li><a href="#">关于</a></li>
+{% endblock %}
+{% block main %}
+{% get_categories as cate_list %}
+<div class="content">
+        {% for cate in cate_list %}
+
+        <ul class="list-with-title">
+            <div class="archive">
+                <div class="listing-title">{{ cate.name }}</div>
+
+                <ul class="listing">
+                    {% for post in post_list %}
+                        {% if post.category.name == cate.name %}
+                    <div class="listing-item">
+                        <div class="listing-post"><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a>
+                            <div class="post-time"><span class="date">{{ post.created_time }}</span></div>
+                        </div>
+                    </div>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+        </ul>
+        {% endfor %}
+</div>
+{% endblock %}
