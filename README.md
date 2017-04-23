@@ -31,10 +31,11 @@ python runserver
 [Django官方参考文档](https://docs.djangoproject.com/en/1.11/howto/deployment/)
 
 **And Enjoy it!**
------
+
 ## 基于默认模板的示例
 ![Example](https://github.com/Lurance/Django_Blog/blob/master/example.png)
------
+
+
 ## 技术说明
 本项目基于Python2.7环境，所以建议基于Python2.7来部署本应用，若你的环境为3.x需手动修改模型层的相关实现,例如：
 ```python
