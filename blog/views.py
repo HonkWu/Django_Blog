@@ -9,7 +9,7 @@ from .models import *
 
 import markdown
 
-def index(request,page):
+def index(request,page=''):
     if not page:
         p = 0
     else:
